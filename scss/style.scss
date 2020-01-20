@@ -1,4 +1,65 @@
 body {
-    color: #171717;
-    background-color: #f3f3f3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+#recipe,
+#panel {
+  padding: 20px;
+  min-height: 200px;
+  border: solid 3px black;
+  border-radius: 10px;
+}
+
+#recipe > ol {
+  text-transform: lowercase;
+}
+
+.menus {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.menus ul {
+  margin-block-start: 5px;
+  padding-inline-start: 5px;
+  min-width: 200px;
+}
+
+.choices-title {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.alc-btn,
+.juice-btn,
+.garnish-btn {
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  list-style: none;
+  background-color: lightblue;
+  cursor: pointer;
+  border: solid 2px transparent;
+  text-transform: uppercase;
+}
+
+.juice-btn {
+  background-color: salmon;
+}
+
+.garnish-btn {
+  background-color: burlywood;
+}
+
+.alc-btn:hover,
+.garnish-btn:hover,
+.juice-btn:hover {
+  border: solid 2px darkblue;
 }

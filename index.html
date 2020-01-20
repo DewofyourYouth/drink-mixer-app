@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Bootstrap -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -16,7 +16,7 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
+    ></script>  -->
 
     <!-- My stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
@@ -26,12 +26,84 @@
   <body>
     <div class="container">
       <div id="app">
-        <h1>{{msg}}</h1>
+        <div id="recipe">
+          <h1 v-if="drinkName !== ''">{{drinkName}} 🍸</h1>
+          <h1 v-else>My Awesome Drink Recipe</h1>
+          <h2
+            v-if="ingredients.alcohol.length > 0 || ingredients.juices.length > 0 || ingredients.garnishes.length > 0"
+          >
+            Ingredients
+          </h2>
+          <h3 v-if="ingredients.alcohol.length > 0">Alcohol</h3>
+          <ol>
+            <li v-for="i of ingredients.alcohol">
+              {{i.name}}
+            </li>
+          </ol>
+          <h3 v-if="ingredients.juices.length > 0">Juices</h3>
+          <ol>
+            <li v-for="i in ingredients.juices">{{i.name}}</li>
+          </ol>
+          <h3 v-if="ingredients.garnishes.length > 0">Garnishes</h3>
+          <ol>
+            <li v-for="i in ingredients.garnishes">{{i.name}}</li>
+          </ol>
+        </div>
+        <div id="panel">
+          <h1>Panel</h1>
+          <label for="drink-name">Drink Name:</label>
+          <input
+            type="text"
+            v-model="drinkName"
+            name="drink-name"
+            id="drink-name"
+          />
+          <hr />
+          <div class="menus">
+            <div>
+              <h3 class="choices-title">Alcohol</h3>
+              <ul>
+                <li
+                  class="alc-btn"
+                  v-for="a in alcohols.sort()"
+                  @click="addToIngredients"
+                >
+                  {{a}}
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="choices-title">Juices</h3>
+              <ul>
+                <li
+                  class="juice-btn"
+                  v-for="j in juices.sort()"
+                  @click="addToIngredients"
+                >
+                  {{j}}
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="choices-title">Garnishe w/</h3>
+              <ul>
+                <li
+                  class="garnish-btn"
+                  v-for="g in garnishes.sort()"
+                  @click="addToIngredients"
+                >
+                  {{g}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Bootstrap dependencies -->
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
@@ -40,8 +112,13 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+
+    <!-- Vue development -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Vue Production -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
 
     <!-- My JavaScript -->
     <script src="./js/main.js"></script>

@@ -1,3 +1,1 @@
-body {
-  color: #171717;
-  background-color: #f3f3f3; }
+body{font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif}#app{display:grid;grid-template-columns:1fr 1fr;grid-column-gap:10px}#panel,#recipe{padding:20px;min-height:200px;border:solid 3px #000;border-radius:10px}#recipe>ol{text-transform:lowercase}.menus{display:flex;flex-flow:row wrap}.menus ul{margin-block-start:5px;padding-inline-start:5px;min-width:200px}.choices-title{text-align:center;margin:0;padding:0}.alc-btn,.garnish-btn,.juice-btn{padding:5px 10px;margin-bottom:3px;border-radius:5px;list-style:none;background-color:#add8e6;cursor:pointer;border:solid 2px transparent;text-transform:uppercase}.juice-btn{background-color:salmon}.garnish-btn{background-color:#deb887}.alc-btn:hover,.garnish-btn:hover,.juice-btn:hover{border:solid 2px #00008b}
