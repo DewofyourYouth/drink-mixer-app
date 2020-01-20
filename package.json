@@ -1,0 +1,19 @@
+{
+  "name": "gulp-time",
+  "version": "1.0.0",
+  "description": "Starter from new gulp SCSS projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacob Shore",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}
